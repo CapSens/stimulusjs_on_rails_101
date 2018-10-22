@@ -15,8 +15,6 @@ export default class extends Controller {
       dataType: "json",
       url: `/comments/${this.comment_id}`,
       success: function(data, status, xhr) {
-	console.log(self.containerTarget)
-	console.log(self.buttonTarget)
 	$(self.containerTarget).removeClass('bs-callout-primary')
 	$(self.containerTarget).addClass('bs-callout-warning')
 	$(self.buttonTarget).hide()
