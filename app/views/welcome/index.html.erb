@@ -1,0 +1,67 @@
+<div class="card border-warning">
+  <div class="card-body">
+    <h5 class="card-title">Reminder</h5>
+    <p class="card-text"><%= link_to 'Admin account', admin_root_path %><br>
+      <ul>
+	<li>admin@example.com / password</li>
+      </ul>
+    </p>
+    <p class="card-text"><%= link_to 'User accounts', new_user_session_path %><br>
+      <ul>
+	<li>user-1@example.com / password</li>
+	<li>user-2@example.com / password</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header">
+    Hello world example
+  </div>
+  <div class="card-body">
+    <div data-controller="hello">
+      <button type="button" data-action="click->hello#say_hello" class="btn btn-outline-primary">Say hello!</button>
+      <span data-target="hello.output"></span>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header">
+    One target to rule them all
+  </div>
+  <div class="card-body">
+    <div data-controller="gnu">
+      <button type="button" data-action="click->gnu#what_is_gnu" class="btn btn-outline-primary">What is GNU?</button>
+      <span data-target="gnu.output"></span>
+      <span data-target="gnu.output"></span>
+      <span data-target="gnu.output"></span>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header">
+    Initialize your controller from the view (data-*)
+  </div>
+  <div class="card-body">
+    <div data-controller="comment-report">
+      <% Comment.find_each do |comment| %>
+	<div data-controller="comment-report" data-comment-report-id="<%= comment.id %>">
+	  <div data-target="comment-report.container" class="bs-callout bs-callout-<%= comment.reported ? 'warning' : 'primary' %>">
+	    <p>
+	      <%= comment.user.email %>:<br>
+	      <%= comment.content %>
+	    </p>
+	    <% unless comment.reported %>
+	      <span data-target="comment-report.button" data-action="click->comment-report#report" class="btn btn-sm btn-outline-danger">
+		Report
+	      </span>
+	    <% end %>
+	  </div>
+	</div>
+      <% end %>
+    </div>
+  </div>
+</div>

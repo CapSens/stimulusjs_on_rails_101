@@ -1,0 +1,17 @@
+{
+  "name": "stimulusjs_on_rails_101",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "^4.1.3",
+    "datepicker": "^0.0.0",
+    "jquery": "^3.3.1",
+    "jquery-datepicker": "^1.12.3",
+    "popper.js": "^1.14.4",
+    "rails-erb-loader": "^5.5.0",
+    "stimulus": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

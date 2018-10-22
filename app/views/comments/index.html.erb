@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Content</th>
+      <th>Visible from</th>
+      <th>Visible until</th>
+      <th>Reported</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.user.email %></td>
+        <td><%= comment.content %></td>
+        <td><%= comment.visible_from %></td>
+        <td><%= comment.visible_until %></td>
+        <td><%= comment.reported %></td>
+        <td><%= link_to 'Show', comment %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_comment_path %>

@@ -1,0 +1,37 @@
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :visible_from %>
+    <%= form.date_select :visible_from %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :visible_until %>
+    <%= form.date_select :visible_until %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :reported %>
+    <%= form.check_box :reported %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

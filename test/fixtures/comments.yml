@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  content: MyText
+  visible_from: 2018-10-22
+  visible_until: 2018-10-22
+  reported: false
+
+two:
+  user: two
+  content: MyText
+  visible_from: 2018-10-22
+  visible_until: 2018-10-22
+  reported: false

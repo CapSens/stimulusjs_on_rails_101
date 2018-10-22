@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <strong>Visible from:</strong>
+  <%= @comment.visible_from %>
+</p>
+
+<p>
+  <strong>Visible until:</strong>
+  <%= @comment.visible_until %>
+</p>
+
+<p>
+  <strong>Reported:</strong>
+  <%= @comment.reported %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
